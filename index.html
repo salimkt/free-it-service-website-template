@@ -16,6 +16,26 @@
   </head>
 
   <body>
+    <script>
+      // Fetching the JSON data
+      fetch("./contents/home.json")
+        .then((response) => {
+          console.log(response.data);
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Update the HTML content
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("description").textContent = data.description;
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    </script>
     <header>
       <div class="my-nav">
         <div class="container">
@@ -65,9 +85,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="banner-content">
-                <span style="color: white; font-size: 50px"
-                  >Welcome to IBC</span
-                >
+                <span style="color: white; font-size: 50px" id="welcome"></span>
                 <span style="color: white"
                   >Your partner in incorporations and business consultancy</span
                 >
