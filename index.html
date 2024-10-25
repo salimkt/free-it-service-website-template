@@ -18,10 +18,14 @@
   <body>
     <script>
       // Fetching the JSON data
-      fetch("./contents/home.json")
-        .then((response) => {
-          console.log(response.data);
+      fetch(
+        "https://raw.githubusercontent.com/salimkt/free-it-service-website-template/refs/heads/main/contents/home.json"
+      )
+        .then(async (response) => {
+          const data = await response.json();
+          console.log(data);
 
+          document.getElementById("welcome").innerText = data.name;
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
@@ -85,7 +89,9 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="banner-content">
-                <span style="color: white; font-size: 50px" id="welcome"></span>
+                <span style="color: white; font-size: 50px" id="welcome"
+                  >Hi</span
+                >
                 <span style="color: white"
                   >Your partner in incorporations and business consultancy</span
                 >
