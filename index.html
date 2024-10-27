@@ -18,18 +18,15 @@
   <body>
     <script>
       // Fetching the JSON data
-      fetch(
-        "https://raw.githubusercontent.com/salimkt/free-it-service-website-template/refs/heads/main/contents/home.json"
-      )
+      fetch("https://raw.githubusercontent.com/salimkt/free-it-service-website-template/refs/heads/main/contents/home.json")
         .then(async (response) => {
-          const data = await response.json();
-          console.log(data);
-
-          document.getElementById("welcome").innerText = data.name;
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
-          return response.json();
+          const data = await response.json();
+          console.log(data);
+          document.getElementById("welcome").innerText = data.name;
+          return data;
         })
         .then((data) => {
           // Update the HTML content
@@ -39,7 +36,7 @@
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
         });
-    </script>
+    </script>    
     <header>
       <div class="my-nav">
         <div class="container">
@@ -793,11 +790,11 @@
               <div class="content">
                 <h2>Quick Links</h2>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./about-us.html">About Us</a></li>
+                  <li><a href="./services.html">Services</a></li>
+                  <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./contact-us.html">Contact Us</a></li>
                 </ul>
               </div>
             </div>
