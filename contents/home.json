@@ -1,3 +1,33 @@
 {
-  "name": "Welcome to IBC"
+  "welcome_slide": [
+    {
+      "head": "Welcome to IBC",
+      "subhead": "Your partner in incorporations and business consultancy"
+    },
+    {
+      "head": "Welcome to IBC slide2",
+      "subhead": "Your partner in incorporations and business consultancy"
+    },
+    {
+      "head": "Welcome to IBC slide3",
+      "subhead": "Your partner in incorporations and business consultancy"
+    }
+  ],
+  "news": [
+    {
+      "head": "Understanding the Impact of Minimum Wage Policies",
+      "body": "The minimum wage is crucial in ensuring fair compensation for workers, providing a standard that safeguards against exploitation and supports living wages.",
+      "date": "August 5, 2021"
+    },
+    {
+      "head": "Exploring the National Living Wage Requirements",
+      "body": "National living wages differ from minimum wages by focusing on what workers actually need to live comfortably, adjusting for cost-of-living variations.",
+      "date": "September 15, 2021"
+    },
+    {
+      "head": "Minimum Wage Adjustments in 2022",
+      "body": "With inflation affecting purchasing power, adjustments in minimum wage are necessary to maintain worker standards of living, especially in urban areas.",
+      "date": "January 10, 2022"
+    }
+  ]
 }
