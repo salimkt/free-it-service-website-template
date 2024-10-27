@@ -18,7 +18,9 @@
   <body>
     <script>
       // Fetching the JSON data
-      fetch("https://raw.githubusercontent.com/salimkt/free-it-service-website-template/refs/heads/main/contents/home.json")
+      fetch(
+        "https://raw.githubusercontent.com/salimkt/free-it-service-website-template/refs/heads/main/contents/home.json"
+      )
         .then(async (response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -36,7 +38,7 @@
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
         });
-    </script>    
+    </script>
     <header>
       <div class="my-nav">
         <div class="container">
