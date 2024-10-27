@@ -27,7 +27,22 @@
           }
           const data = await response.json();
           console.log(data);
-          document.getElementById("welcome").innerText = data.name;
+          data.welcome_slide.map((item, index) => {
+            //Welcome slide
+            document.getElementById(`slide_head${index + 1}`).innerText =
+              item.head;
+            document.getElementById(`slide_body${index + 1}`).innerText =
+              item.subhead;
+          });
+          //News update
+          data.news.map((item, index) => {
+            //Welcome slide
+            document.getElementById(`news_h${index + 1}`).innerText = item.head;
+            document.getElementById(`news_b${index + 1}`).innerText = item.body;
+            document.getElementById(`news_date${index + 1}`).innerText =
+              item.date;
+          });
+
           return data;
         })
         .then((data) => {
@@ -88,10 +103,10 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="banner-content">
-                <span style="color: white; font-size: 50px" id="welcome"
+                <span style="color: white; font-size: 50px" id="slide_head1"
                   >Hi</span
                 >
-                <span style="color: white"
+                <span style="color: white" id="slide_body1"
                   >Your partner in incorporations and business consultancy</span
                 >
                 <ol>
@@ -106,7 +121,12 @@
             </div>
             <div class="carousel-item">
               <div class="banner-content">
-                <h1>Making your business <span>ideas Come true</span></h1>
+                <span style="color: white; font-size: 50px" id="slide_head2"
+                  >Hi</span
+                >
+                <span style="color: white" id="slide_body2"
+                  >Your partner in incorporations and business consultancy</span
+                >
                 <ol>
                   <li><a href="#">Learn More</a></li>
                   <li><a href="#">Get In Touch</a></li>
@@ -119,7 +139,12 @@
             </div>
             <div class="carousel-item">
               <div class="banner-content">
-                <h1>Making your business <span>ideas Come true</span></h1>
+                <span style="color: white; font-size: 50px" id="slide_head3"
+                  >Hi</span
+                >
+                <span style="color: white" id="slide_body3"
+                  >Your partner in incorporations and business consultancy</span
+                >
                 <ol>
                   <li><a href="#">Learn More</a></li>
                   <li><a href="#">Get In Touch</a></li>
@@ -701,8 +726,10 @@
                 </div>
                 <div class="blog-content-section">
                   <div class="blo-content-title">
-                    <h4>The National Minimum Wage Is An Important Part</h4>
-                    <p>
+                    <h4 id="news_h1">
+                      The National Minimum Wage Is An Important Part
+                    </h4>
+                    <p id="news_b1">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Neque at numquam, asperiores aut praesentium facilis
                       ratione! Voluptatibus neque dignissimos ipsa atque veniam
@@ -711,8 +738,10 @@
                   </div>
                   <div class="blog-admin">
                     <ol>
-                      <li><i class="fal fa-user-tie"></i> By Admin</li>
-                      <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                      <!-- <li><i class="fal fa-user-tie"></i> By Admin</li> -->
+                      <li id="news_date1">
+                        <i class="fal fa-calendar-alt"></i> july 28, 2020
+                      </li>
                     </ol>
                   </div>
                 </div>
@@ -726,8 +755,10 @@
                 </div>
                 <div class="blog-content-section">
                   <div class="blo-content-title">
-                    <h4>The National Minimum Wage Is An Important Part</h4>
-                    <p>
+                    <h4 id="news_h2">
+                      The National Minimum Wage Is An Important Part
+                    </h4>
+                    <p id="news_b2">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Neque at numquam, asperiores aut praesentium facilis
                       ratione! Voluptatibus neque dignissimos ipsa atque veniam
@@ -736,8 +767,10 @@
                   </div>
                   <div class="blog-admin">
                     <ol>
-                      <li><i class="fal fa-user-tie"></i> By Admin</li>
-                      <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                      <!-- <li><i class="fal fa-user-tie"></i> By Admin</li> -->
+                      <li id="news_date2">
+                        <i class="fal fa-calendar-alt"></i> july 28, 2020
+                      </li>
                     </ol>
                   </div>
                 </div>
@@ -751,8 +784,10 @@
                 </div>
                 <div class="blog-content-section">
                   <div class="blo-content-title">
-                    <h4>The National Minimum Wage Is An Important Part</h4>
-                    <p>
+                    <h4 id="news_h3">
+                      The National Minimum Wage Is An Important Part
+                    </h4>
+                    <p id="news_b3">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Neque at numquam, asperiores aut praesentium facilis
                       ratione! Voluptatibus neque dignissimos ipsa atque veniam
@@ -761,8 +796,10 @@
                   </div>
                   <div class="blog-admin">
                     <ol>
-                      <li><i class="fal fa-user-tie"></i> By Admin</li>
-                      <li><i class="fal fa-calendar-alt"></i> july 28, 2020</li>
+                      <!-- <li><i class="fal fa-user-tie"></i> By Admin</li> -->
+                      <li id="news_date3">
+                        <i class="fal fa-calendar-alt"></i> july 28, 2020
+                      </li>
                     </ol>
                   </div>
                 </div>
@@ -807,9 +844,12 @@
               <div class="content">
                 <h2>contact us</h2>
                 <ol>
-                  <li>info@findhouse.com</li>
-                  <li>Collins Street West, Victoria 8007, Australia.</li>
-                  <li>+1 246-345-0695</li>
+                  <li>Info.ibc@imtibish.com</li>
+                  <li>
+                    ROOM NO 60/4904, FAHED RESIDENECY, JAIL ROAD, Puthiyara,
+                    Kozhikode, Kerala, India, 673004.
+                  </li>
+                  <li>+91 7994433135</li>
                 </ol>
               </div>
             </div>
